@@ -31,7 +31,7 @@ Lorry::Car::~Car() {
     Lorry::Car::innerCount--;
 }
 
-string Lorry::Car::toString() const {
+Lorry::Car::operator string() const {
     stringstream sout;
     sout << "Brand: " << brand << ", Cylinders: " << cylinders << ", Power: " << power << endl;
     return sout.str();
@@ -47,7 +47,7 @@ Lorry::Car& Lorry::Car::operator=(const Car& secondCar) {
 }
 
 ostream& operator<<(ostream& out, const Lorry::Car& car) {
-    out << "Brand: " << car.brand << ", Cylinders: " << car.cylinders << ", Power: " << car.power << endl;
+    out << string(car);
     return out;
 }
 
@@ -105,9 +105,9 @@ Lorry::~Lorry() {
     Lorry::count--;
 }
 
-string Lorry::toString() const {
+Lorry::operator string() const {
     stringstream sout;
-    sout << "Car: " << car.toString() << "Payload: " << to_string(payload) << endl;
+    sout << "Car: " << car << "Payload: " << to_string(payload) << endl;
     return sout.str();
 }
 
@@ -120,7 +120,7 @@ Lorry& Lorry::operator=(const Lorry& secondLorry) {
 }
 
 ostream& operator<<(ostream& out, const Lorry& lorry) {
-    out << "Car: " << lorry.car << "Payload: " << lorry.payload << endl;
+    out << string(lorry);
     return out;
 }
 

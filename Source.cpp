@@ -14,20 +14,19 @@ int main() {
     cout << l;
 
     Lorry::Car myCar("bmw", 4, 200.0);
-    cout << "Initial cylinders: " << myCar.GetCylinders() << endl;
-    cout << "Initial power: " << myCar.GetPower() << endl;
+    cout << "Initial values: " << myCar << endl;
 
     ++myCar;
-    cout << "Cylinders after prefix increment: " << myCar.GetCylinders() << endl;
+    cout << "After prefix increment: " << myCar << endl;
 
     myCar++;
-    cout << "Power after postfix increment: " << myCar.GetPower() << endl;
+    cout << "After postfix increment: " << myCar << endl;
 
     --myCar;
-    cout << "Cylinders after prefix decrement: " << myCar.GetCylinders() << endl;
+    cout << "After prefix decrement: " << myCar << endl;
 
     myCar--;
-    cout << "Power after postfix decrement: " << myCar.GetPower() << endl;
+    cout << "After postfix decrement: " << myCar << endl;
 
     cout << "Number of outer class objects: " << Lorry::getCount() << endl;
     cout << "Number of inner class objects: " << Lorry::Car::getInnerCount() << endl;

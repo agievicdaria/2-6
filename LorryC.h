@@ -23,11 +23,9 @@ public:
         void SetBrand(const string& brand) { this->brand = brand; }
         void SetCylinders(int cylinders) { this->cylinders = cylinders; }
         void SetPower(double power) { this->power = power; }
-
         static int getInnerCount() { return innerCount; }
 
-        string toString() const;
-
+        operator string() const;
         Car& operator++();
         Car operator++(int);
         Car& operator--();
@@ -53,9 +51,9 @@ public:
     void SetPayload(double payload) { this->payload = payload; }
     Car GetCar() const { return car; }
     double GetPayload() const { return payload; }
+    static int getCount() { return count; }
 
-    string toString() const;
-
+    operator string() const;
     Lorry& operator++();
     Lorry operator++(int);
     Lorry& operator--();
@@ -63,6 +61,4 @@ public:
     Lorry& operator=(const Lorry& secondLorry);
     friend ostream& operator<<(ostream& out, const Lorry& lorry);
     friend istream& operator>>(istream& in, Lorry& lorry);
-
-    static int getCount() { return count; }
 };
